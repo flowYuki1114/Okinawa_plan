@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沖縄旅行 4/9〜11 🌺</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Shippori+Mincho:wght@400;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocean: #0a4a6e;
+    --sky: #4ab8d4;
+    --sand: #f5ede0;
+    --coral: #e8705a;
+    --gold: #c9a84c;
+    --white: #fefcf8;
+    --dark: #1a1a2e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: 'Noto Serif JP', serif;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(74,184,212,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(10,74,110,0.4) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, rgba(232,112,90,0.1) 0%, transparent 40%),
+      linear-gradient(160deg, #0a1628 0%, #0d2a45 40%, #0a1628 100%);
+  }
+
+  .wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    overflow: hidden;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 100%;
+  }
+
+  .wave svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .wave1 { animation: wave 8s linear infinite; opacity: 0.4; }
+  .wave2 { animation: wave 12s linear infinite reverse; opacity: 0.25; }
+  .wave3 { animation: wave 6s linear infinite; opacity: 0.15; }
+
+  @keyframes wave {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* 星 */
+  .stars {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--d, 3s) ease-in-out infinite var(--delay, 0s);
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    animation: fadeUp 1s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .secret-badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    padding: 6px 16px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    font-family: 'DM Serif Display', serif;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(52px, 12vw, 96px);
+    line-height: 0.9;
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--sky) 50%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: clamp(14px, 3vw, 18px);
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-family: 'Shippori Mincho', serif;
+  }
+
+  .date-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 12px 28px;
+    border-radius: 100px;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .date-pill span { color: var(--sky); }
+
+  /* SECTION */
+  .section {
+    padding: 80px 20px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-family: 'DM Serif Display', serif;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 6vw, 42px);
+    margin-bottom: 32px;
+    line-height: 1.1;
+  }
+
+  /* FLIGHT CARD */
+  .flight-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .flight-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--sky), transparent);
+  }
+
+  .flight-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .flight-time {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .flight-airport {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+    margin-top: 4px;
+  }
+
+  .flight-arrow {
+    flex: 1;
+    text-align: center;
+    position: relative;
+  }
+
+  .flight-arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--sky), transparent);
+  }
+
+  .flight-arrow-icon {
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .flight-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .peach-badge {
+    background: linear-gradient(135deg, #ff6b8a, #ff8c69);
+    color: white;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: 1px;
+  }
+
+  .total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(74,184,212,0.08);
+    border: 1px solid rgba(74,184,212,0.2);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 8px;
+  }
+
+  .total-label { font-size: 13px; color: rgba(255,255,255,0.6); }
+  .total-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    color: var(--sky);
+  }
+
+  /* HOTEL CARD */
+  .hotel-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .hotel-header {
+    background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hotel-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--gold), #e8c97a);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .hotel-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .hotel-nights {
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 2px;
+  }
+
+  .hotel-body { padding: 20px 24px; }
+
+  .amenity-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .amenity {
+    font-size: 12px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 100px;
+    padding: 4px 12px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .price-breakdown {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 4px;
+  }
+
+  .hotel-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--gold);
+  }
+
+  .hotel-price-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 2px;
+  }
+
+  .warning-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(232,112,90,0.15);
+    border: 1px solid rgba(232,112,90,0.3);
+    color: var(--coral);
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+
+  .btn-link {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-family: 'Shippori Mincho', serif;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), #e8c97a);
+    color: var(--dark);
+    font-weight: 700;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.05);
+    transform: translateY(-2px);
+  }
+
+  /* HIGHLIGHT CARD - ゲルマニヨン */
+  .highlight-card {
+    background: linear-gradient(135deg, rgba(10,74,110,0.6), rgba(26,26,46,0.8));
+    border: 1px solid rgba(74,184,212,0.3);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .highlight-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(74,184,212,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(232,112,90,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .highlight-header {
+    padding: 32px 28px 24px;
+    position: relative;
+  }
+
+  .star-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(74,184,212,0.15);
+    border: 1px solid rgba(74,184,212,0.3);
+    color: var(--sky);
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+    font-family: 'DM Serif Display', serif;
+  }
+
+  .highlight-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 6vw, 38px);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .highlight-subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  .highlight-body { padding: 0 28px 28px; }
+
+  .menu-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .menu-item:last-child { border-bottom: none; }
+
+  .menu-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--sky);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .menu-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .menu-text em {
+    color: var(--sky);
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .price-highlight {
+    background: rgba(74,184,212,0.1);
+    border: 1px solid rgba(74,184,212,0.2);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .price-main {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    color: var(--sky);
+    line-height: 1;
+  }
+
+  .price-unit {
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 4px;
+  }
+
+  /* SCHEDULE */
+  .day-block {
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .day-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 64px;
+    line-height: 1;
+    color: rgba(255,255,255,0.08);
+    letter-spacing: -4px;
+  }
+
+  .day-info { flex: 1; }
+
+  .day-date {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+  }
+
+  .day-theme {
+    font-size: 12px;
+    color: var(--coral);
+    letter-spacing: 3px;
+    margin-top: 2px;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--sky), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -25px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--sky);
+    background: var(--dark);
+  }
+
+  .timeline-dot.special {
+    border-color: var(--gold);
+    background: var(--gold);
+    box-shadow: 0 0 12px rgba(201,168,76,0.5);
+  }
+
+  .timeline-time {
+    font-size: 12px;
+    color: var(--sky);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    font-family: 'DM Serif Display', serif;
+  }
+
+  .timeline-content {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .timeline-content strong {
+    color: white;
+    font-weight: 700;
+  }
+
+  /* COST */
+  .cost-grid {
+    display: grid;
+    gap: 12px;
+  }
+
+  .cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+  }
+
+  .cost-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .cost-amount {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: white;
+  }
+
+  .cost-total {
+    background: linear-gradient(135deg, rgba(74,184,212,0.15), rgba(10,74,110,0.3));
+    border-color: rgba(74,184,212,0.3);
+  }
+
+  .cost-total .cost-label { color: var(--sky); }
+  .cost-total .cost-amount { font-size: 28px; color: var(--sky); }
+
+  /* TODO */
+  .todo-list { display: grid; gap: 12px; }
+
+  .todo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .todo-item:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.15);
+    transform: translateX(4px);
+  }
+
+  .todo-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .todo-num.urgent { background: var(--coral); color: white; }
+  .todo-num.important { background: var(--gold); color: var(--dark); }
+  .todo-num.normal { background: rgba(255,255,255,0.1); color: white; }
+
+  .todo-body { flex: 1; }
+  .todo-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .todo-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+  .todo-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--sky);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74,184,212,0.3);
+    padding-bottom: 1px;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+  }
+
+  .todo-link:hover {
+    color: white;
+    border-color: white;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 60px 20px 80px;
+    color: rgba(255,255,255,0.3);
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .footer-emoji {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    margin: 0 20px;
+  }
+
+  /* SCROLL ANIMATION */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+
+  <!-- 星 -->
+  <div class="stars" id="stars"></div>
+
+  <!-- 波 -->
+  <div class="wave-container">
+    <div class="wave wave1">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="rgba(74,184,212,0.15)"/>
+      </svg>
+    </div>
+    <div class="wave wave2">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,50 C240,20 480,70 720,50 C960,30 1200,60 1440,50 L1440,80 L0,80 Z" fill="rgba(10,74,110,0.2)"/>
+      </svg>
+    </div>
+    <div class="wave wave3">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path d="M0,60 C180,40 360,80 540,60 C720,40 900,70 1080,60 C1260,50 1380,65 1440,60 L1440,80 L0,80 Z" fill="rgba(26,26,46,0.8)"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="secret-badge">✦ Secret Plan ✦</div>
+    <h1>OKINAWA</h1>
+    <p class="hero-sub">女3人旅・2泊3日 完全プラン</p>
+    <div class="date-pill">
+      <span>2026.04.09</span>
+      <span style="color:rgba(255,255,255,0.3)">—</span>
+      <span>2026.04.11</span>
+    </div>
+  </div>
+</div>
+
+<!-- FLIGHT -->
+<div class="section reveal">
+  <p class="section-label">Flight</p>
+  <h2 class="section-title">航空券</h2>
+
+  <div class="flight-card">
+    <div style="font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.4);margin-bottom:14px;">GO ✦ 行き</div>
+    <div class="flight-row">
+      <div>
+        <div class="flight-time">08:50</div>
+        <div class="flight-airport">NGO · 中部国際</div>
+      </div>
+      <div class="flight-arrow">
+        <div class="flight-arrow-icon">✈</div>
+      </div>
+      <div style="text-align:right">
+        <div class="flight-time">11:15</div>
+        <div class="flight-airport">OKA · 那覇</div>
+      </div>
+    </div>
+    <div class="flight-meta">
+      <span>4月9日（木）</span>
+      <span class="peach-badge">Peach APJ487</span>
+    </div>
+  </div>
+
+  <div class="flight-card">
+    <div style="font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.4);margin-bottom:14px;">RETURN ✦ 帰り</div>
+    <div class="flight-row">
+      <div>
+        <div class="flight-time">20:05</div>
+        <div class="flight-airport">OKA · 那覇</div>
+      </div>
+      <div class="flight-arrow">
+        <div class="flight-arrow-icon">✈</div>
+      </div>
+      <div style="text-align:right">
+        <div class="flight-time">22:15</div>
+        <div class="flight-airport">NGO · 中部国際</div>
+      </div>
+    </div>
+    <div class="flight-meta">
+      <span>4月11日（土）</span>
+      <span class="peach-badge">Peach APJ490</span>
+    </div>
+  </div>
+
+  <div class="total-row">
+    <div>
+      <div class="total-label">3人分・往復合計</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:2px;">+454ポイント獲得</div>
+    </div>
+    <div class="total-price">¥30,200</div>
+  </div>
+
+  <a href="https://www.airtrip.jp/search/aichi/okinawa/" target="_blank" class="btn-link btn-secondary">エアトリで予約する →</a>
+</div>
+
+<div class="divider"></div>
+
+<!-- HOTEL -->
+<div class="section reveal">
+  <p class="section-label">Hotel</p>
+  <h2 class="section-title">ホテル</h2>
+
+  <div class="hotel-card">
+    <div class="hotel-header">
+      <div class="hotel-icon">🏨</div>
+      <div>
+        <div class="hotel-name">トリプルルーム<br>バスタブ付・バストイレ別</div>
+        <div class="hotel-nights">2 NIGHTS · 4/9〜4/11</div>
+      </div>
+    </div>
+    <div class="hotel-body">
+      <div class="amenity-list">
+        <span class="amenity">32㎡</span>
+        <span class="amenity">バンクベッド×3台</span>
+        <span class="amenity">バスタブ付き</span>
+        <span class="amenity">スマートTV</span>
+        <span class="amenity">電子レンジ</span>
+        <span class="amenity">空気清浄機</span>
+        <span class="amenity">禁煙</span>
+        <span class="amenity">ラウンジサービス付</span>
+      </div>
+      <div class="price-breakdown">大人3名・2泊合計</div>
+      <div class="hotel-price">¥49,002</div>
+      <div class="hotel-price-sub">1人あたり約¥16,334</div>
+      <div class="warning-badge">
+        ⚠️ 残り1部屋！払い戻し不可
+      </div>
+      <a href="https://booking.resorts.co.jp" target="_blank" class="btn-link btn-primary">今すぐ予約する →</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- GERUMAGNON -->
+<div class="section reveal">
+  <p class="section-label">★ Special Experience</p>
+  <h2 class="section-title">目玉イベント</h2>
+
+  <div class="highlight-card">
+    <div class="highlight-header">
+      <div class="star-badge">✦ 1日1組限定</div>
+      <div class="highlight-title">Trattoria Bar<br>慶留間gnon</div>
+      <div class="highlight-subtitle">ゲルマニヨン · 慶良間諸島 慶留間島</div>
+    </div>
+
+    <div class="highlight-body">
+      <div class="menu-item">
+        <div class="menu-dot"></div>
+        <div class="menu-text">人口わずか60人の離島にある<em>1日1組限定</em>の隠れ家イタリアン</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-dot"></div>
+        <div class="menu-text">自家栽培野菜 × 島の高級魚を使った<em>スペシャルコース</em></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-dot"></div>
+        <div class="menu-text"><em>阿嘉港からの送迎あり</em>（のんびりドライブ付き）</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-dot"></div>
+        <div class="menu-text">「世界ふしぎ発見」出演の農民ロッカーオーナーシェフ🎸</div>
+      </div>
+
+      <div class="price-highlight">
+        <div style="font-size:12px;letter-spacing:3px;color:rgba(255,255,255,0.5);margin-bottom:8px;">LUNCH TOUR PRICE</div>
+        <div class="price-main">¥6,000</div>
+        <div class="price-unit">/ 人（ドリンク別）· 2名様〜</div>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.04);border-radius:12px;padding:16px;margin-bottom:20px;font-size:13px;color:rgba(255,255,255,0.6);line-height:2;">
+        🚢 泊港 9:00発 → 阿嘉港 10:10着<br>
+        🚗 阿嘉港 → ゲルマニヨン（送迎）<br>
+        🍝 11:00〜 スペシャルランチ<br>
+        🚢 阿嘉港 17:20発 → 泊港 18:10着
+      </div>
+
+      <a href="https://gerumagnon.wixsite.com/gerumagnon" target="_blank" class="btn-link btn-primary">ゲルマニヨンを予約する →</a>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SCHEDULE -->
+<div class="section reveal">
+  <p class="section-label">Schedule</p>
+  <h2 class="section-title">スケジュール</h2>
+
+  <!-- Day 1 -->
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-num">01</div>
+      <div class="day-info">
+        <div class="day-date">4月9日（木）</div>
+        <div class="day-theme">ARRIVAL · 那覇入り</div>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">08:50</div>
+        <div class="timeline-content"><strong>セントレア発</strong> Peach APJ487</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">11:15</div>
+        <div class="timeline-content"><strong>那覇空港着</strong> → ホテルへ</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">13:00〜</div>
+        <div class="timeline-content"><strong>国際通り・牧志公設市場</strong>でランチ</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">夕方</div>
+        <div class="timeline-content"><strong>瀬長島ウミカジテラス</strong> 夕日 × 飛行機🛫</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">夜</div>
+        <div class="timeline-content"><strong>波上宮参拝</strong>（恋愛成就🙏）→ 居酒屋で夕食🍺</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-num">02</div>
+      <div class="day-info">
+        <div class="day-date">4月10日（金）</div>
+        <div class="day-theme">ISLAND · 阿嘉島 × ゲルマニヨン ⭐</div>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">8:30</div>
+        <div class="timeline-content"><strong>とまりん着</strong> チケット購入</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">9:00</div>
+        <div class="timeline-content"><strong>高速船クイーンざまみ出発</strong> 🚢</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">10:10</div>
+        <div class="timeline-content"><strong>阿嘉島着</strong> ゲルマニヨンの送迎を待つ🚗</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot special"></div>
+        <div class="timeline-time">11:00〜13:30</div>
+        <div class="timeline-content"><strong>ゲルマニヨン スペシャルランチ</strong> 🍝<br>島の高級魚コース ¥6,000/人</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">13:30〜17:00</div>
+        <div class="timeline-content"><strong>阿嘉島・慶留間島散策</strong> ケラマジカを探す🦌</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">17:20</div>
+        <div class="timeline-content"><strong>帰りの高速船</strong> → 泊港 18:10着</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">夜</div>
+        <div class="timeline-content">那覇で夕食🌙</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-num">03</div>
+      <div class="day-info">
+        <div class="day-date">4月11日（土）</div>
+        <div class="day-theme">LAST DAY · 那覇観光 → 帰路</div>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">午前</div>
+        <div class="timeline-content"><strong>首里城公園・守礼門</strong>散策</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">昼</div>
+        <div class="timeline-content">沖縄グルメランチ（沖縄そば・チャンプル）</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">午後</div>
+        <div class="timeline-content"><strong>国際通り</strong>でお土産まとめ買い🛍️</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">20:05</div>
+        <div class="timeline-content"><strong>那覇空港発</strong> Peach APJ490 ✈️</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-time">22:15</div>
+        <div class="timeline-content"><strong>中部国際着</strong> おつかれさまでした🌺</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- COST -->
+<div class="section reveal">
+  <p class="section-label">Budget</p>
+  <h2 class="section-title">費用（1人あたり）</h2>
+
+  <div class="cost-grid">
+    <div class="cost-row">
+      <div class="cost-label">✈️ 航空券（往復）</div>
+      <div class="cost-amount">¥10,067</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">🏨 ホテル2泊</div>
+      <div class="cost-amount">¥16,334</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">🍝 ゲルマニヨン</div>
+      <div class="cost-amount">¥6,000</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">🚢 フェリー往復</div>
+      <div class="cost-amount">¥6,080</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">🍜 食費・現地交通</div>
+      <div class="cost-amount">¥10,000〜</div>
+    </div>
+    <div class="cost-row cost-total">
+      <div class="cost-label">合計目安</div>
+      <div class="cost-amount">¥48,000〜</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- TODO -->
+<div class="section reveal">
+  <p class="section-label">Action</p>
+  <h2 class="section-title">やること リスト</h2>
+
+  <div class="todo-list">
+    <div class="todo-item">
+      <div class="todo-num urgent">1</div>
+      <div class="todo-body">
+        <div class="todo-title">🎸 ゲルマニヨン予約</div>
+        <div class="todo-desc">4/10ランチ・1日1組限定なので最優先！今すぐ連絡を。</div>
+        <a href="https://gerumagnon.wixsite.com/gerumagnon" target="_blank" class="todo-link">gerumagnon.wixsite.com →</a>
+      </div>
+    </div>
+    <div class="todo-item">
+      <div class="todo-num urgent">2</div>
+      <div class="todo-body">
+        <div class="todo-title">🏨 ホテル予約</div>
+        <div class="todo-desc">残り1部屋・払い戻し不可。ゲルマニヨン確定後すぐに！</div>
+        <a href="https://booking.resorts.co.jp" target="_blank" class="todo-link">booking.resorts.co.jp →</a>
+      </div>
+    </div>
+    <div class="todo-item">
+      <div class="todo-num important">3</div>
+      <div class="todo-body">
+        <div class="todo-title">✈️ 航空券予約</div>
+        <div class="todo-desc">Peach APJ487（行き）/ APJ490（帰り）3人分</div>
+        <a href="https://www.airtrip.jp/search/aichi/okinawa/" target="_blank" class="todo-link">エアトリで予約 →</a>
+      </div>
+    </div>
+    <div class="todo-item">
+      <div class="todo-num normal">4</div>
+      <div class="todo-body">
+        <div class="todo-title">🚢 フェリー予約</div>
+        <div class="todo-desc">4/10 泊港9:00発・クイーンざまみ 3人分</div>
+        <a href="https://yoyaku.vill.zamami.okinawa.jp/zamami_web/log0101!doFormOpenLogin.action" target="_blank" class="todo-link">座間味村予約サイト →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span class="footer-emoji">🌺</span>
+  <br><br>
+</div>
+
+<script>
+  // 星を生成
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 60; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.cssText = `
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      --d: ${2 + Math.random() * 4}s;
+      --delay: ${Math.random() * 4}s;
+      width: ${1 + Math.random() * 2}px;
+      height: ${1 + Math.random() * 2}px;
+    `;
+    starsEl.appendChild(star);
+  }
+
+  // スクロールアニメーション
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
